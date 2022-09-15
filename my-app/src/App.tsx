@@ -40,10 +40,11 @@ function App() {
       <div className="container p-4">
         <div className="row">
           <div className="col-md-6 offset-md-3">
-            <div className="card">
-              <div className="card-body">
-                <form onSubmit={handleSubmit}>
-                  <input
+            <h1 className="text-center">To Do App</h1>
+              <div className="card">
+                <div className="card-body">
+                  <form onSubmit={handleSubmit}>
+                    <input
                     type="text"
                     onChange={(e) => setNewTask(e.target.value)}
                     value={newTask}
@@ -51,7 +52,7 @@ function App() {
                     ref={taskInput}
                     autoFocus
                   />
-                  <button className="btn btn-success btn-block mt-2">Save</button>
+                  <button className="btn btn-success btn-block mt-2 col-12">Save</button>
                 </form>
               </div>
             </div>
@@ -60,10 +61,10 @@ function App() {
              <div className="card card-body mt-2" key={i}>
               <h2 style={{textDecoration: t.done ? 'line-through' : ''}}>{t.name}</h2>
               <div>
-                <button className="btn btn-secondary" onClick={() => toggleDoneTask(i)}>
-                {t.done ? '✓' : '✗'}
+                <button className="btn btn-secondary m-1" onClick={() => toggleDoneTask(i)}>
+                {t.done ? '✗' : '✓'}
                 </button>
-                <button className="btn btn-danger" onClick={() => removeTask(i)}>
+                <button className="btn btn-danger m-1" onClick={() => removeTask(i)}>
                 🗑
                 </button>
               </div>
